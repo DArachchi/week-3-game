@@ -2,10 +2,11 @@ var currentWordIndex;
 var currentState = [];
 var currentWord = "Press any key to get started!";
 var currentWordArray = [];
+var guess;
 var guessesRemaining;
 var hits;
 var incorrectGuesses = [];
-var letters = /^[a-zA-Z]+$/; 
+var letters = /^[A-Z]+$/; 
 var wins = 0;
 
 var game = {
@@ -104,7 +105,6 @@ var game = {
 	],
 
 	addWin: function() {
-		console.log("Adding win");
 		wins++;
 		document.getElementById("caption").innerHTML = currentWord + " " + game.carChoices[currentWordIndex].Model;
 		document.getElementById("imageId").src = game.carChoices[currentWordIndex].src;	
@@ -112,47 +112,51 @@ var game = {
 	},
 
 	checkGuess: function() {
-		console.log("Checking guess");
+		hits = 0;
+		for (var i = 0; i < currentWordArray.length; i++) {
+			if (currentWordArray[i] === guess) {
+				hits++;
+				currentState[i] = guess;
+				document.getElementById("state").innerHTML = currentState.join(" ");
+			}
+		}
+		if (hits > 0) {
+			game.checkState();
+		} else if (incorrectGuesses.includes(guess)) {
+			game.getGuess();
+		} else {
+			incorrectGuesses.push(guess);
+			guessesRemaining--;
+			document.getElementById("guessed").innerHTML = incorrectGuesses.join(" ");
+			document.getElementById("remaining").innerHTML = guessesRemaining;
+		}
+		game.checkState();
+	},
+
+	getGuess: function() {
 		document.onkeyup = function(event) {
 			var guess = String.fromCharCode(event.keyCode).toUpperCase();
-			if ((guess.match(letters))) {
-				hits = 0;
-				for (var i = 0; i < currentWordArray.length; i++) {
-					if (currentWordArray[i] === guess) {
-						hits++;
-						currentState[i] = guess;
-						document.getElementById("state").innerHTML = currentState.join(" ");
-					}
-				}
-				if (hits > 0) {
-					game.checkState();
-				} else if (incorrectGuesses.includes(guess)) {
-					game.checkGuess();
-				} else {
-					incorrectGuesses.push(guess);
-					guessesRemaining--;
-					document.getElementById("guessed").innerHTML = incorrectGuesses.join(" ");
-					document.getElementById("remaining").innerHTML = guessesRemaining;
-				}
-			}
-			game.checkState();
+			if ((guess.match(letters))) {  
+				game.checkGuess();  
+			}  
+			else {
+				game.getGuess();
+			}  			
 		}
 	},
 
 	checkState: function() {
-		console.log("Checking state");
 		if (guessesRemaining == 0) {
 			game.setNewWord();
 		}
 		if (currentState.includes("_")) {
-			game.checkGuess();
+			game.getGuess();
 		} else {
 			game.addWin();
 		}
 	},
 
 	setNewWord: function() {
-		console.log("Setting new world");
 		currentState = []
 		guessesRemaining = 12;
 		incorrectGuesses = [];
@@ -172,5 +176,5 @@ var game = {
 document.getElementById("caption").innerHTML = "Press any key to get started!"
 document.getElementById("imageId").src = ("assets/images/startingimage.jpg")
 game.setNewWord();
-game.checkGuess();
+game.getGuess();
 

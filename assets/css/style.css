@@ -1,0 +1,64 @@
+body {
+	background-image: url("../images/Background.png");
+	color: #ffffff;
+	text-align: center;
+	width: 1024px;
+}
+
+#caption {
+	margin-top: 25px;
+}
+
+div {
+	margin-bottom: 25px;
+}
+
+footer {
+	bottom: 5px;
+	position: fixed;
+	left: 5px;
+	text-align: center;
+}
+
+.gameImage {
+	float: left;
+}
+.gameText {
+	float: right;
+
+}
+
+header {
+	color: #ff0000;
+	font-size: 60pt;
+	margin: 20px 0px 40px 0px;
+}
+
+h1 {
+	bottom: 70px;
+	font-size: 35pt;
+	left: 125px;
+	position: relative;
+    -ms-transform: rotate(-11deg);
+    -webkit-transform: rotate(-11deg);
+    transform: rotate(-11deg);
+}
+
+#imageId {
+	border: 2px solid #ffffff;
+	height: 256px;
+	width: 341px;
+}
+
+section {
+	border: 2px solid #ffffff;
+	font-size: 30px;
+	margin: 20px 30px;
+	min-height: 380px;
+	padding: 20px 10px;
+	width: 40%;
+}
+
+#state {
+	font-size: 30pt;
+}

@@ -104,7 +104,6 @@ var game = {
 	],
 
 	addWin: function() {
-		console.log("Adding win");
 		wins++;
 		document.getElementById("caption").innerHTML = currentWord + " " + game.carChoices[currentWordIndex].Model;
 		document.getElementById("imageId").src = game.carChoices[currentWordIndex].src;	
@@ -152,7 +151,6 @@ var game = {
 	},
 
 	setNewWord: function() {
-		console.log("Setting new world");
 		currentState = []
 		guessesRemaining = 12;
 		incorrectGuesses = [];
