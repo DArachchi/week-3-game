@@ -170,7 +170,7 @@ var game = {
 }
 
 document.getElementById("caption").innerHTML = "Press any key to get started!"
-document.getElementById("imageId").src = ("assets/images/startingimage.jpg")
+document.getElementById("imageId").src = ("assets/images/StartingImage.jpg")
 game.setNewWord();
 game.checkGuess();
 
