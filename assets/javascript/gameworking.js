@@ -48,7 +48,7 @@ var game = {
 		},
 		jaguar = {
 			Make: "JAGUAR",
-			Model: "F-Type",
+			Model: "F-TYPE",
 			src: "assets/images/Jaguar.jpg"
 		},
 		lamborghini = {
@@ -104,6 +104,7 @@ var game = {
 	],
 
 	addWin: function() {
+		console.log("Adding win");
 		wins++;
 		document.getElementById("caption").innerHTML = currentWord + " " + game.carChoices[currentWordIndex].Model;
 		document.getElementById("imageId").src = game.carChoices[currentWordIndex].src;	
@@ -151,6 +152,7 @@ var game = {
 	},
 
 	setNewWord: function() {
+		console.log("Setting new world");
 		currentState = []
 		guessesRemaining = 12;
 		incorrectGuesses = [];
@@ -168,7 +170,7 @@ var game = {
 }
 
 document.getElementById("caption").innerHTML = "Press any key to get started!"
-document.getElementById("imageId").src = ("assets/images/startingimage.jpg")
+document.getElementById("imageId").src = ("assets/images/StartingImage.jpg")
 game.setNewWord();
 game.checkGuess();
 

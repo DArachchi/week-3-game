@@ -21,6 +21,16 @@ var game = {
 			Model: "R8",
 			src: "assets/images/Audi.jpg"
 		},
+		bmw = {
+			Make: "BMW",
+			Model: "M2 COUPE",
+			src: "assets/images/BMW.jpg"
+		},
+		bentley = {
+			Make: "BENTLEY",
+			Model: "CONTINENTAL GT SPEED",
+			src: "assets/images/Bentley.jpg"
+		},
 		chevrolet = {
 			Make: "CHEVROLET",
 			Model: "CORVETTE Z06 C7.R EDITION",
@@ -48,7 +58,7 @@ var game = {
 		},
 		jaguar = {
 			Make: "JAGUAR",
-			Model: "F-Type",
+			Model: "F-TYPE",
 			src: "assets/images/Jaguar.jpg"
 		},
 		lamborghini = {
@@ -63,7 +73,7 @@ var game = {
 		},
 		lotus = {
 			Make: "LOTUS",
-			Model: "EXIGE",
+			Model: "EXIGE CUP 260",
 			src: "assets/images/Lotus.jpg"
 		},
 		maserati = {
@@ -81,9 +91,19 @@ var game = {
 			Model: "F1",
 			src: "assets/images/McLaren.jpg"
 		},
+		mini = {
+			Make: "MINI",
+			Model: "COOPER JOHN COOPER WORKS",
+			src: "assets/images/Mini.jpg"
+		},
+		mitsubishi = {
+			Make: "MITSUBISHI",
+			Model: "LANCER EVOLUTION FINAL EDITION",
+			src: "assets/images/Mitsubishi.jpg"
+		},
 		nissan = {
-				Make: "NISSAN",
-				Model: "GT-R NISMO",
+			Make: "NISSAN",
+			Model: "GT-R NISMO",
 			src: "assets/images/Nissan.jpg"
 		},
 		porsche = {
@@ -95,6 +115,11 @@ var game = {
 			Make: "SUBARU",
 			Model: "WRX STI",
 			src: "assets/images/Subaru.jpg"
+		},
+		tesla = {
+			Make: "TESLA",
+			Model: "ROADSTER 2.5",
+			src: "assets/images/Tesla.jpg"
 		},
 		toyota = {
 			Make: "TOYOTA",
@@ -152,7 +177,7 @@ var game = {
 	},
 
 	setNewWord: function() {
-		console.log("Setting new world");
+		console.log("Setting new word");
 		currentState = []
 		guessesRemaining = 12;
 		incorrectGuesses = [];
