@@ -74,7 +74,7 @@ var game = {
 		lotus = {
 			Make: "LOTUS",
 			Model: "EXIGE CUP 260",
-			src: "assets/images/Lotus.jpg"
+			src: "assets/images/LotusExige.jpg"
 		},
 		maserati = {
 			Make: "MASERATI",
